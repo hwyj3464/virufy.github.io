@@ -29,6 +29,7 @@
 	<meta name="author" content="Team Virufy">
 
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/header.css" />
 	<script src="https://kit.fontawesome.com/828decba15.js" crossorigin="anonymous"></script>
 
 	<!-- Favicon -->
@@ -53,18 +54,26 @@
 				<img src="images/logo2.png" alt="Virufy Logo">
 			</a>
 			<nav id="nav">
-				<a href="index.html">Home</a>
-				<a href="./index.html#about">About</a>
-				<a href="./app.html">App</a>
-				<a href="./research.html">Research</a>
-				<a href="data.html">Open Data</a>
-				<a href="./team.html">Team</a>
-				<a href="./goals.html">Goals</a>
-				<a href="./join.html">Join Us</a>
-				<a href="./oyw.html">One Young World</a>
-				<a href="https://blog.virufy.org/">Blog</a>
-				<a href="https://www.gofundme.com/f/virufyorg" target="_blank"><button>Donate</button>
+				<a href="index.html" datai-18n="nav.home"></a>
+				<a href="./app.html" data-i18n="nav.app"></a>
+				<a href="./research.html" data-i18n="nav.research"></a>
+				<a href="data.html" data-i18n="nav.openData"></a>
+				<a href="./team.html" data-i18n="nav.team"></a>
+				<a href="./goals.html" data-i18n="nav.goals"></a>
+				<a href="./join.html" data-i18n="nav.joinUs"></a>
+				<a href="./oyw.html" data-i18n="nav.oneYoungWorld"></a>
+				<a href="https://blog.virufy.org/" data-i18n="nav.blog"></a>
+				<a href="https://www.gofundme.com/f/virufyorg" target="_blank"><button data-i18n="nav.donate"></button>
 				</a>
+
+				<div class="language-toggle">
+					<select id="language-toggle-select" name="language" id="language">
+						<option value="en" data-i18n="languageToggle.en"></option>
+						<option value="pt" data-i18n="languageToggle.pt"></option>
+						<option value="sp" data-i18n="languageToggle.sp"></option>
+					</select>
+				</div>
+
 			</nav>
 			<a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
 		</div>
@@ -75,32 +84,32 @@
 		<div class="inner">
 			<header>
 				<h1 style="margin:0;padding:0">Welcome to <span id="header-virufy-span">VIRUFY</span></h1>
-				<br><h3>Early detection of COVID-19 with your smartphone.</h3><br>
+				<br><h3 data-i18n="homePage.caption"></h3><br>
 			</header>
 
 			<div class="flex">
 				<div>
 					<span class="icon fa-user-md"></span>
-					<h3>Feeling Sick</h3>
-					<p>and unsure?</p>
+					<h3 data-i18n="homePage.icon1"></h3>
+					<p data-i18n="homepage.icon1Caption"></p>
 				</div>
 
 				<div>
 					<a href="./app.html">
 					<span class="icon fa-microphone"></span>
 					</a>
-					<h3>Record Symptoms</h3>
-					<p>using your phone</p>
+					<h3 data-i18n="homePage.icon2"></h3>
+					<p data-i18n="homepage.icon2Caption"></p>
 				</div>
 
 				<div>
 					<span class="icon fa-cogs"></span>
-					<h3>Verify COVID</h3>
-					<p>with AI</p>
+					<h3 data-i18n="homePage.icon3"></h3>
+					<p data-i18n="homePage.icon3Caption"></p>
 				</div>
 			</div>
 			<header>
-				<a id="why-work" href="./research.html">Why this will work</a>
+				<a id="why-work" href="./research.html" data-i18n="homePage.researchLink"></a>
 			</header>
 		</div>
 	</section>
@@ -117,16 +126,10 @@
 		<br>
 		<br>
 
-			<h2 class="green-highlight">
-				Our Mission
+			<h2 class="green-highlight" data-i18n="homePage.title1">
 			</h2>
 			<div class="align-justify">
-				<p>
-					Our vision is to develop a smartphone app that can be used by everyone in the world to find out in
-					seconds whether they have COVID-19. We are utilizing cutting-edge artificial intelligence technology to
-					identify patterns undetectable by humans from the unique respiratory signatures of lungs damaged by the
-					virus. From extensive research, we believe we can achieve 90% or more accuracy and help control this
-					pandemic!
+				<p data-i18n="homePage.t1p1">
 				</p>
 
 				<p>
@@ -288,5 +291,18 @@
 	<script src="assets/js/main.js"></script>
 	<script defer src="https://www.gofundme.com/static/js/embed.js"></script>
 	<script src="assets/js/email.js"></script>
+	<!-- internationalization -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/8.1.0/i18next.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-i18next/1.2.0/jquery-i18next.min.js" ></script>
+	<script src="https://unpkg.com/i18next-xhr-backend/i18nextXHRBackend.js"></script>
+	<script src="https://unpkg.com/i18next-browser-languagedetector/i18nextBrowserLanguageDetector.js"></script>
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<script src="assets/js/i18n.js"></script>
+
+	<script>
+		i18nManager(function() {
+			$('body').localize();
+		})
+	</script>
 </body>
 </html>
