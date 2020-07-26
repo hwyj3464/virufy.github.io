@@ -2936,9 +2936,35 @@ button:disabled,
 	font-size: 1em;
 }
 
-@media screen and (min-width: 1021px) and (max-width: 1160px){
-	nav {
+#nav {
+	width: 95%;
+	float: right;
+}
+
+@media screen and (max-width: 1300px){
+	#nav {
+		width: 90%;
+		float: right;
+	}
+}
+
+@media screen and (max-width: 1216px){
+	#nav {
+		width: 90%;
+		float: right;
+	}
+}
+
+@media screen and (max-width: 1072px){
+	#nav {
 		width: 85%;
+		float: right;
+	}
+}
+
+@media screen and (max-width: 1020px){
+	#nav {
+		width: 90%;
 		float: right;
 	}
 }
@@ -3582,6 +3608,9 @@ button:disabled,
 
 #header-virufy-span {
 	color: #6cc091;
+	font-weight: 400;
+	line-height: 1.5;
+	margin: 0;
 }
 
 /* 'Get in touch' h1 */
